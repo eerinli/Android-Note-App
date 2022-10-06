@@ -8,15 +8,17 @@
     * Java SDK 17.0.2 (temurin)
  
     ## Enhancement 
-    (2)
-    I added an additional view: 
-    * press P to open a portal to another dimension in time
-    * …
-
-    I added allowance for more sorting options: 
-    I added more properties / tags to notes than “archived”: 
-    I added allowance for note content to be edited: 
-    I added allowance forAllow a text file to be dragged onto the application to create a note. Parse the content in the drag object to make a reasonable title and body for the note: 
-    I added a way to make some notes to-dos, then make a simple way to mark them as done. Instead of deleting done to-do notes, hide them by default and make a way to show them: 
-    * press P to open a portal to another dimension in time
-    * …
+    I added more sorting options for notes in the choice box: 
+    * choose "Note Content (asc)" to sort by note contents in ascending orders (A to Z, then a to Z)
+    * choose "Note Content (desc)" to sort by note contents in descending orders (z to a, then Z to A)
+    * choose "Created Time (asc)" to sort by created time of the note in ascending orders (first to last)
+    * choose "Created Time (asc)" to sort by created time of the note in ascending orders (last to first)
+    * Note: note created when started also have a default create time in order
+    
+    I added an additional view in the view group: 
+    * click "Desktop" Button to display the desktop view
+    * drag any notes, including "special note", to move it to anywhere in the pane
+    * Note created with "special note" will generate on the left corner
+    * In desktop view, normal notes are displayed as in grid view except that they have borders
+    * The order of the note stack (bottom to top) is based on sorting options
+    * Special note is always on top for convenience
