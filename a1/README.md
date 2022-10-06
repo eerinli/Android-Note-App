@@ -13,6 +13,7 @@
     * choose "Note Content (desc)" to sort by note contents in descending orders (z to a, then Z to A)
     * choose "Created Time (asc)" to sort by created time of the note in ascending orders (first to last)
     * choose "Created Time (asc)" to sort by created time of the note in ascending orders (last to first)
+    * Note: note created when started also have a default create time in order
     
     I added an additional view: 
     * press P to open a portal to another dimension in time
