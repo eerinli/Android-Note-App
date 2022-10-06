@@ -19,6 +19,6 @@
     * click "Desktop" Button to display the desktop view
     * drag any notes, including "special note", to move it to anywhere in the pane
     * Note created with "special note" will generate on the left corner
-    * In desktop view, notes are displayed as square areas as in grid view except that they have borders
+    * In desktop view, normal notes are displayed as in grid view except that they have borders
     * The order of the note stack (bottom to top) is based on sorting options
     * Special note is always on top for convenience
