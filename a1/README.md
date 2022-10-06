@@ -15,12 +15,10 @@
     * choose "Created Time (asc)" to sort by created time of the note in ascending orders (last to first)
     * Note: note created when started also have a default create time in order
     
-    I added an additional view: 
-    * press P to open a portal to another dimension in time
-    * …
-    I added more properties / tags to notes than “archived”: 
-    I added allowance for note content to be edited: 
-    I added allowance forAllow a text file to be dragged onto the application to create a note. Parse the content in the drag object to make a reasonable title and body for the note: 
-    I added a way to make some notes to-dos, then make a simple way to mark them as done. Instead of deleting done to-do notes, hide them by default and make a way to show them: 
-    * press P to open a portal to another dimension in time
-    * …
+    I added an additional view in the view group: 
+    * click "Desktop" Button to display the desktop view
+    * drag any notes, including "special note", to move it to anywhere in the pane
+    * Note created with "special note" will generate on the left corner
+    * In desktop view, notes are displayed as square areas as in grid view except that they have borders
+    * The order of the note stack (bottom to top) is based on sorting options
+    * Special note is always on top for convenience
