@@ -8,12 +8,15 @@
     * Java SDK 17.0.2 (temurin)
  
     ## Enhancement 
-    (2)
+    I added more sorting options for notes in the choice box: 
+    * choose "Note Content (asc)" to sort by note contents in ascending orders (A to Z, then a to Z)
+    * choose "Note Content (desc)" to sort by note contents in descending orders (z to a, then Z to A)
+    * choose "Created Time (asc)" to sort by created time of the note in ascending orders (first to last)
+    * choose "Created Time (asc)" to sort by created time of the note in ascending orders (last to first)
+    
     I added an additional view: 
     * press P to open a portal to another dimension in time
     * …
-
-    I added allowance for more sorting options: 
     I added more properties / tags to notes than “archived”: 
     I added allowance for note content to be edited: 
     I added allowance forAllow a text file to be dragged onto the application to create a note. Parse the content in the drag object to make a reasonable title and body for the note: 
