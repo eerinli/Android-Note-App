@@ -12,12 +12,13 @@ const val UNIT = 1.55
 // Note: listScrollPane and gridScrollPane are set as global variable
 //       to avoid resizing issues
 val listRoot = VBox().apply {
-    padding = Insets(10.0)
+    padding = Insets(5.5)
+    spacing = 2.0
 }
 val listScrollPane = ScrollPane(listRoot)
 
 val gridRoot = FlowPane().apply {
-    padding = Insets(10.0)
+    padding = Insets(10.0 * UNIT)
     hgap = 10.0
     vgap = 10.0
 }

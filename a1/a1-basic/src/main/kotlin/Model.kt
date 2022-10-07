@@ -25,14 +25,14 @@ class Model {
 
     // common variable
     private val ACTIVE_BACKGROUND = Background(
-            BackgroundFill(Color.LIGHTYELLOW,
-                    CornerRadii(10.0),
-                    Insets(5.0))
+        BackgroundFill(Color.LIGHTYELLOW,
+            CornerRadii(10.0),
+            Insets(5.0))
     )
     private val ARCHIVED_BACKGROUND = Background(
-            BackgroundFill(Color.LIGHTGRAY,
-                    CornerRadii(10.0),
-                    Insets(5.0))
+        BackgroundFill(Color.LIGHTGRAY,
+            CornerRadii(10.0),
+            Insets(5.0))
     )
 
 
@@ -146,7 +146,7 @@ class Model {
 
         // listener for archived checkbox in list view
         listCheckNoteArchived.selectedProperty().addListener {
-            _, _, newValue ->
+                _, _, newValue ->
             if (newValue) {
                 listNote.background = ARCHIVED_BACKGROUND
                 if (note.isActive) {
@@ -170,7 +170,7 @@ class Model {
 
         // listener for archived checkbox in grid view
         gridCheckNoteArchived.selectedProperty().addListener {
-            _, _, newValue ->
+                _, _, newValue ->
             if (newValue) {
                 gridNote.background = ARCHIVED_BACKGROUND
                 if (note.isActive) {
