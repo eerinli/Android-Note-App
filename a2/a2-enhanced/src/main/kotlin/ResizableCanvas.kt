@@ -47,7 +47,6 @@ abstract class ResizableCanvas(private val model: Model) : Canvas() {
         // enhanced
         saturation = model.saturation
         brightness = model.brightness
-        println("update saturation in canvas")
     }
 
     override fun isResizable(): Boolean {

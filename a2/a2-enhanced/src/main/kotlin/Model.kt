@@ -102,14 +102,6 @@ class Model {
         updateCurrent(currentTitle)
     }
 
-    // add a new entry to current dataset
-    fun addEntry2() {
-        println("add entry 2")
-        changeDataEntry = true
-        dataSets[titleSearch(currentTitle2)].data.add(0.0)
-        updateCurrent2(currentTitle2)
-    }
-
     // change the dataset selection
     fun changeDataSet(title: String) {
         changeDataEntry = true
@@ -162,8 +154,7 @@ class Model {
             if (it < 0) curNoNegative = false
         }
 
-        val disable2 = (currentDataSet2.data.size == 1)
-        currentDataSet2.data.forEachIndexed { i, it ->
+        currentDataSet2.data.forEachIndexed { _, it ->
             if (it < 0) curNoNegative = false
         }
     }
@@ -171,7 +162,7 @@ class Model {
     // update dataTable in model
     private fun updateDataTable2() {
         curNoNegative = true
-        currentDataSet.data.forEachIndexed { i, it ->
+        currentDataSet.data.forEachIndexed { _, it ->
             if (it < 0) curNoNegative = false
         }
 

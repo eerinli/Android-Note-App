@@ -5,17 +5,16 @@ import java.lang.Double.min
 // a helper class for LineChart with ResizableCanvas
 class LineChart(private val model: Model) : ResizableCanvas(model) {
     override fun draw() {
-        println("redraw")
         setupChart()
         gc.stroke = Color.BLACK
         n = (model.currentDataSet.data.size).toDouble()
-        var maxValue1 = (model.currentDataSet.data.maxOrNull() ?: -1).toDouble()
+        val maxValue1 = (model.currentDataSet.data.maxOrNull() ?: -1).toDouble()
         val minValue1 = (model.currentDataSet.data.minOrNull() ?: -1).toDouble()
         var minValue = minValue1
         if (model.currentDataSet2.data.isEmpty()) {
             maxValue = maxValue1
         } else {
-            var maxValue2 = (model.currentDataSet2.data.maxOrNull() ?: -1).toDouble()
+            val maxValue2 = (model.currentDataSet2.data.maxOrNull() ?: -1).toDouble()
             maxValue = max(maxValue1,maxValue2)
             val minValue2 = (model.currentDataSet2.data.minOrNull() ?: -1).toDouble()
             minValue = min(minValue1,minValue2)
@@ -23,7 +22,6 @@ class LineChart(private val model: Model) : ResizableCanvas(model) {
 
         val barWidth = (chartWidth) / (n - 1)
         val heightRatio = chartHeight / (maxValue - minValue)
-        println("Max:"+ maxValue+ "Min"+minValue)
         if (model.currentDataSet2.data.isNotEmpty()) {
             val n2 = (model.currentDataSet2.data.size).toDouble()
             val barWidth2 = (chartWidth) / (n2 - 1)
