@@ -27,4 +27,7 @@
     * The value of saturation and brightness is shown on the right of the sliders
     * Note: The slider changes do not apply to line chart
 
+    ## Bonus
+    * Bonus is all implemented as described
+
 
