@@ -13,10 +13,21 @@
     * additional lines for median and SD is added in the third visualization to avoid confusion
     * median is represented by blue line and SD is represented by green line
 
-    I added more selection of colour schemes for the visualizations: 
-    * click "Desktop" Button to display the desktop view
-    * drag any notes, including "special note", to move it to anywhere in the pane
-    * Note created with "special note" will generate on the left corner
-    * In desktop view, normal notes are displayed as in grid view except that they have borders
-    * The order of the note stack (bottom to top) is based on sorting options
-    * Special note is always on top for convenience
+    I allowed two data set to be rendered in visualization of line chart: 
+    * click the second "data set selector" to select the second dataset where "" is the default selection
+    * dataset 2 values is updated in data entries on the left and also in the visualization
+    * dataset 2 is represented by blue line with green marker
+    * change the value of an entry in the dataset 2 entry updates the visualization accordingly
+    * Note: you could only change the value in the entry of dataset 2 but not add / delete
+    * choose the null selection "" to render only dataset 1 in line chart
+
+    I allowed more color selection in the visualization: 
+    * slide the "Saturation" slider in data entry below the "Add Entry" button changes the saturation of visualization
+    * slide the "Brightness" slider in data entry changes the brightness of visualization
+    * The value of saturation and brightness is shown on the right of the sliders
+    * Note: The slider changes do not apply to line chart
+
+    ## Bonus
+    * Bonus is all implemented as described
+
+
