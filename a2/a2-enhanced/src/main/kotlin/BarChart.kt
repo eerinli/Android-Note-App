@@ -9,6 +9,7 @@ class BarChart(private val model: Model) : ResizableCanvas(model) {
         val minValue = (model.currentDataSet.data.minOrNull() ?: -1).toDouble()
         val heightRatio = (chartHeight) / (maxValue - min(0.0, minValue))
 
+        if (minValue ==0.0 && maxValue ==0.0) gc.strokeLine(15.0, height - 15, width - 15, height - 15)
         gc.strokeLine(
             15.0,
             chartHeight + 15 + min(0.0, minValue) * heightRatio,

@@ -16,14 +16,15 @@ class BarChart(private val model: Model) : ResizableCanvas(model) {
             width - 15,
             height - 15 + min(0.0, minValue) * heightRatio
         )
-
+        var allZero = true
         model.currentDataSet.data.forEachIndexed { i, it ->
             gc.fill = Color.hsb(ratio * (i + 1), 1.0, 1.0)
-
             val y = if (it < 0) height - 15 + min(0.0, minValue) * heightRatio
             else height - 15 + min(0.0, minValue) * heightRatio - heightRatio * abs(it)
 
             gc.fillRect(10 + (i + 1) * 5 + i * barWidth, y, barWidth, heightRatio * abs(it))
+            if (it != 0.0) allZero = false
         }
+        if (allZero) gc.strokeLine(15.0, height - 15, width - 15, height - 15)
     }
 }
