@@ -1,5 +1,37 @@
+import javafx.scene.Scene
+import javafx.scene.control.Label
+import javafx.scene.layout.Pane
+import javafx.stage.Stage
+
 class Model {
     // region View Management
+
+    // from layouts in public repo
+    /*
+    * Base class for all of our windows
+    * Used to set default values for all windows
+    */
+    open inner class StandardWindow @JvmOverloads internal constructor(x: Float = 0f, y: Float = 0f) :
+        Stage() {
+        init {
+            this.x = x.toDouble()
+            this.y = y.toDouble()
+            width = 300.0
+            height = 50.0
+            this.isResizable = true
+        }
+    }
+    private inner class WarningWindow @JvmOverloads constructor(x: Float = 0f, y: Float = 0f) :
+        StandardWindow(x, y) {
+        init {
+            val warning = Label("You cannot add a dataset with the same name")
+            val root = Pane()
+            root.children.add(warning)
+            scene = Scene(root)
+            title = "Warning"
+            show()
+        }
+    }
 
     // all views of this model
     private val views: ArrayList<IView> = ArrayList()
@@ -79,13 +111,21 @@ class Model {
 
     // add new DataSet with one entry
     fun addDataSet(datasetName: String) {
-        changeDataEntry = true
-        viewType = CHARTTYPE.LINE
-        addNewDataset = true
-        val newDataSet = DataSet(datasetName, mutableListOf())
-        dataSets.add(newDataSet)
-        currentTitle = newDataSet.title
-        addEntry() // initialize one entry
+        val index = titleSearch(datasetName)
+        if (index != -1) {
+            WarningWindow(50.0F, 50.0F)
+        } else {
+            addNewDataset = true
+            viewType = CHARTTYPE.LINE
+            val newDataSet = DataSet(datasetName, mutableListOf(0.0))
+            dataSets.add(newDataSet)
+            currentTitle = newDataSet.title
+            // initialize one entry
+            currentDataSet = newDataSet
+            // update dataTable
+            updateDataTable()
+            notifyObservers()
+        }
     }
 
     // add a new entry to current dataset
