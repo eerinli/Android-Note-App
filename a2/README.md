@@ -19,7 +19,7 @@
     * dataset 2 is represented by blue line with green marker
     * change the value of an entry in the dataset 2 entry updates the visualization accordingly
     * Note: you could only change the value in the entry of dataset 2 but not add / delete
-    * choose the null selection "" to render only dataset 1 in line chart
+    * choose the null selection "" which is created by default to render only dataset 1 in line chart
 
     I allowed more color selection in the visualization: 
     * slide the "Saturation" slider in data entry below the "Add Entry" button changes the saturation of visualization
