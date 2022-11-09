@@ -41,7 +41,6 @@ class ViewGrid : Pane(), InvalidationListener {
     }
 
     // used for updating the view
-    private val columnPieceCnt = IntArray(8) { 0 }
     private enum class STATE { PRESS, DRAG, RELEASE}
     private var oldPlayer: Player = Model.onNextPlayer.value
 
@@ -172,8 +171,7 @@ class ViewGrid : Pane(), InvalidationListener {
                     if (col != -1) {
                         Model.dropPiece(col) // onPieceDropped is only changed in dropPiece
                         if (Model.onPieceDropped.value != null) { // dropped successfully
-                            columnPieceCnt[col]++
-                            t = getPieceTimeline(columnPieceCnt[col])
+                            t = getPieceTimeline(Model.droppedRow)
                         } else { // over a full slot
                             t = getPieceTimeline(-1)
                             state = STATE.PRESS

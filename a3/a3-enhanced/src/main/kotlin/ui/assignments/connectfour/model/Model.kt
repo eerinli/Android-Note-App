@@ -72,6 +72,9 @@ object Model {
      */
     val onPieceDropped = SimpleObjectValue<Piece?>(null)
 
+    // value to store the row of grid-coordinate after a piece has been dropped into a slot.
+    var droppedRow = 0
+
     /**
      * Starts the game. Listen to [onNextPlayer] to receive notification about changing player and turns.
      */
@@ -85,7 +88,9 @@ object Model {
      */
     fun dropPiece(column: Int) {
         if (onGameWin.value == Player.NONE && onGameDraw.value == false) {       // if game has not resolved yet ...
-            onPieceDropped.set(grid.dropPiece(column, onNextPlayer.value))       // ... attempt to drop piece and notify listeners
+            val pieceDroppedInfo = grid.dropPiece(column, onNextPlayer.value)
+            onPieceDropped.set(pieceDroppedInfo.first)       // ... attempt to drop piece and notify listeners
+            droppedRow = height - pieceDroppedInfo.second
             if (onPieceDropped.value != null) {                                  // if drop successful ...
                 onGameWin.value = grid.hasWon()                                  // ... check resolution (win)
                 onGameDraw.value = grid.hasDraw()                                // ... check resolution (draw)

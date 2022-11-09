@@ -78,12 +78,12 @@ class Grid(width: Int, height: Int, private val length: Int) {
     /**
      * Attempts to drop a piece in a certain column. If a piece can be successfully dropped, the function returns that [Piece]. If not, the function returns null.
      * @param column the column in which to drop a piece
-     * @return the dropped [Piece], if successful; null otherwise
+     * @return in pair: first is the dropped [Piece], if successful; null otherwise. second is the row of the dropped [Piece]
      */
-    fun dropPiece(column: Int, player: Player): Piece? {
+    fun dropPiece(column: Int, player: Player): Pair<Piece?, Int> {
         val row = grid.getColumn(column).count { it.player == Player.NONE } // number of unoccupied spots in the column
-        if (row == 0) return null                                                // if none ... return null
+        if (row == 0) return Pair(null, 0)                                                // if none ... return null
         grid.setCell(column, row - 1, player)                                 // set ownership for piece furthest down in the column
-        return grid.getCell(column, row - 1)                                  // return piece
+        return Pair(grid.getCell(column, row - 1), row - 1 )                                // return piece
     }
 }

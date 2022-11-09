@@ -3,11 +3,9 @@ package ui.assignments.connectfour.ui
 import javafx.animation.*
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
-import javafx.scene.Group
 import javafx.scene.image.ImageView
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.Pane
-import javafx.scene.layout.StackPane
 import javafx.scene.paint.Color
 import javafx.scene.shape.Circle
 import javafx.scene.shape.Rectangle
@@ -18,7 +16,6 @@ import ui.assignments.connectfour.model.Model
 import ui.assignments.connectfour.model.Player
 
 class ViewGrid : Pane(), InvalidationListener {
-
     // grid
     private var gridNode = ImageView(
         javaClass.getResource("/ui/assignments/connectfour/grid_8x7.png")?.toString()
@@ -40,7 +37,6 @@ class ViewGrid : Pane(), InvalidationListener {
     }
 
     // used for updating the view
-    private val columnPieceCnt = IntArray(8) { 0 }
     private enum class STATE { PRESS, DRAG, RELEASE}
     private var oldPlayer: Player = Model.onNextPlayer.value
 
@@ -179,8 +175,7 @@ class ViewGrid : Pane(), InvalidationListener {
                     if (col != -1) {
                         Model.dropPiece(col) // onPieceDropped is only changed in dropPiece
                         if (Model.onPieceDropped.value != null) { // dropped successfully
-                            columnPieceCnt[col]++
-                            t = getPieceTimeline(columnPieceCnt[col])
+                            t = getPieceTimeline(Model.droppedRow)
                         } else { // over a full slot
                             t = getPieceTimeline(-1)
                             state = STATE.PRESS
