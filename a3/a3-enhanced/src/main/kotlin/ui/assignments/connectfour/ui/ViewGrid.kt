@@ -134,9 +134,9 @@ class ViewGrid : Pane(), InvalidationListener {
 
 
             // function to obtain Timeline to move newPiece linearly
-            fun getPieceTimeline(count: Int): Timeline {
-                val yPos = if (count == -1) pieceStartY else 720.0 - count * 80.0
-                val xPos = if (count == -1) pieceStartX else newPiece.centerX // do not change
+            fun getPieceTimeline(y: Int): Timeline {
+                val yPos = if (y == -1) pieceStartY else (y + 2) * 80.0
+                val xPos = if (y == -1) pieceStartX else newPiece.centerX // do not change
 
                 return Timeline(
                     KeyFrame(
@@ -175,7 +175,7 @@ class ViewGrid : Pane(), InvalidationListener {
                     if (col != -1) {
                         Model.dropPiece(col) // onPieceDropped is only changed in dropPiece
                         if (Model.onPieceDropped.value != null) { // dropped successfully
-                            t = getPieceTimeline(Model.droppedRow)
+                            t = getPieceTimeline(Model.onPieceDropped.value!!.y)
                         } else { // over a full slot
                             t = getPieceTimeline(-1)
                             state = STATE.PRESS
