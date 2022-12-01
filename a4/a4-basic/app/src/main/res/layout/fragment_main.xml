@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layout for main screen-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ViewMain"
+    tools:ignore="ExtraText">
+
+    <!--non-float components of main screen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--switch between showing all notes or only non-archived notes-->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_show_archived"
+            android:gravity="end|center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="6dp"
+            android:text="@string/archived_label_main" />
+
+        <!--scrollable list of notes-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout android:id="@+id/note_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>>
+
+    <!--float components of main screen-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/fab_main"
+        android:elevation="10dp"
+        android:textSize="30sp"
+        app:layout_anchor="@id/fab"
+        app:layout_anchorGravity="center"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

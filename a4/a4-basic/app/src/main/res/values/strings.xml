@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">A4 Notes - j2469li</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="archived_label_main">Show archived?</string>
+    <string name="fab_main">+</string>
+    <string name="delete">D</string>
+    <string name="archived">A</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="important">Important</string>
+    <string name="create">Create</string>
+    <string name="archived_label">Archived</string>
+</resources>
