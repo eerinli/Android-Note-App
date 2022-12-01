@@ -100,6 +100,7 @@ class NotesViewModel : ViewModel() {
 
     /**
      * set the value of [viewArchived] from value, which stores read-only observables of [Boolean]. Update read-only version of [notes] accordingly from [notes] in model
+     * @param value value of viewArchived to be set
      * @see viewArchived
      */
     fun setViewArchived(value: Boolean) {
@@ -124,6 +125,9 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to add note in [notes] from the View to the Model.
+     *  @param title title of the note
+     *  @param content content or body of the note
+     *  @param important indicates if the note is important
      * @see notes
      */
     fun addNote(title: String, content: String, important: Boolean = false) {
@@ -132,6 +136,7 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to remove note with given id in [notes] from the View to the Model.
+     *  @param id unique id of the note to be removed
      * @see notes
      */
     fun removeNote(id: Int) {
@@ -140,6 +145,8 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to update archived field of note with given id in [notes] from the View to the Model.
+     *  @param id unique id of the note to be updated
+     *  @param archived indicates if the note is archived
      * @see notes
      */
     fun updateNoteArchived(id: Int, archived: Boolean) {
@@ -148,6 +155,11 @@ class NotesViewModel : ViewModel() {
 
     /**
      * Update a read-only version of [editNote] in the View
+     *  @param id unique id of the note to be updated
+     *  @param title title of the note
+     *  @param content content or body of the note
+     *  @param important indicates if the note is important
+     *  @param archived indicates if the note is archived
      * @see editNote
      */
     fun updateEditNote(id: Int?, title: String?, content: String?, important: Boolean?, archived: Boolean?) {
@@ -164,6 +176,8 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to update title field of note with given id in [notes] from the View to the Model.
+     *  @param id unique id of the note to be updated
+     *  @param title new title of the note
      * @see notes
      */
     fun updateNoteTitle(id: Int, title: String) {
@@ -172,6 +186,8 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to update content field of note with given id in [notes] from the View to the Model.
+     *  @param id unique id of the note to be updated
+     *  @param content new content of the note
      * @see notes
      */
     fun updateNoteContent(id: Int, content: String) {
@@ -180,6 +196,8 @@ class NotesViewModel : ViewModel() {
 
     /**
      * forward requests to update important field of note with given id in [notes] from the View to the Model.
+     *  @param id unique id of the note to be updated
+     *  @param important indicates if the note is important
      * @see notes
      */
     fun updateNoteImportant(id: Int, important: Boolean) {
