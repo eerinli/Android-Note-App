@@ -26,8 +26,10 @@ class ViewAdd : Fragment() {
         // add UI handlers that call view model here
         val buttonCreate = root.findViewById<Button>(R.id.button_create)
         buttonCreate.setOnClickListener {
-            val noteContent = root.findViewById<EditText>(R.id.note_content_add).text.toString()
-            val noteTitle = root.findViewById<EditText>(R.id.note_title_add).text.toString()
+            var noteContent = root.findViewById<EditText>(R.id.note_content_add).text.toString()
+            if (noteContent == "") noteContent = "Content"
+            var noteTitle = root.findViewById<EditText>(R.id.note_title_add).text.toString()
+            if (noteTitle == "") noteTitle = "Title"
             val noteImportant = root.findViewById<SwitchCompat>(R.id.switch_important_add).isChecked
             viewModel.addNote(noteTitle,noteContent,noteImportant)
 
