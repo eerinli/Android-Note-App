@@ -198,7 +198,7 @@ class NotesViewModel : ViewModel() {
      * forward requests to update important field of note with given id in [notes] from the View to the Model.
      *  @param id unique id of the note to be updated
      *  @param important indicates if the note is important
-     * @see Model.notes
+     * @see notes
      */
     fun updateNoteImportant(id: Int, important: Boolean) {
         model.updateNoteImportant(id, important)
